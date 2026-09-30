@@ -1,0 +1,113 @@
+.loading-ai-container {
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+}
+
+.loading-ai-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.loading-spinner-wrapper {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: rgba(14, 165, 233, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.loading-ai-header h3 {
+  color: var(--text-main);
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.loading-ai-header p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.spinner {
+  color: var(--sky-main);
+  animation: spin 1.4s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.loading-stages {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.loading-stage {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: all var(--transition-normal);
+}
+
+.stage-icon-wrapper {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-normal);
+}
+
+.stage-text {
+  font-size: 0.9rem;
+  transition: color var(--transition-normal);
+}
+
+/* States */
+.loading-stage.pending .stage-icon-wrapper {
+  background: var(--surface-subtle);
+  color: var(--text-subtle);
+  border: 1px solid var(--border-light);
+}
+
+.loading-stage.pending .stage-text {
+  color: var(--text-muted);
+}
+
+.loading-stage.active .stage-icon-wrapper {
+  background: rgba(14, 165, 233, 0.16);
+  color: var(--sky-main);
+  border: 1px solid var(--sky-main);
+  box-shadow: 0 0 14px var(--sky-glow);
+}
+
+.loading-stage.active .stage-text {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.loading-stage.completed .stage-icon-wrapper {
+  background: var(--sky-main);
+  color: #ffffff;
+  border: 1px solid var(--sky-main);
+}
+
+.loading-stage.completed .stage-text {
+  color: var(--text-muted);
+}

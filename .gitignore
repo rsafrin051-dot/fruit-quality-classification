@@ -1,0 +1,33 @@
+# Node modules
+node_modules/
+frontend/node_modules/
+
+# Python virtual environment and cache
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+*.log
+backend/*.log
+
+# Build folders
+frontend/dist/
+frontend/build/
+
+# IDE/OS files
+.vscode/
+.idea/
+.DS_Store
+
+# Data and models (if large)
+# models/*.h5  # re-enabled: best_model.h5 must be committed for Keras 2 compatibility
+models/*.pt
+data/
+
+Real-World Garbage-Waste Classification (5 Classes)/

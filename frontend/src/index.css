@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* =========================================================
+     SKY BLUE THEME & SPECTRUM OF BLUES
+     - Bright Sky Blue (Highlights & Accents)
+     - Electric Sky Blue (Primary Brand Action)
+     - Deep Azure / Ocean Blue (Depth & Gradients)
+     - Royal Cobalt Blue (Secondary Accents)
+     - Ice Cyan Mist (Subtle Surfaces & Glows)
+     ========================================================= */
+  --sky-bright: #38bdf8;          /* Bright Vibrant Sky */
+  --sky-main: #0ea5e9;            /* Electric Sky Blue */
+  --sky-deep: #0284c7;            /* Deep Ocean Azure */
+  --sky-dark: #0369a1;            /* Midnight Maritime */
+  --sky-ice: #e0f2fe;             /* Soft Crystalline Ice */
+  --sky-glow: rgba(14, 165, 233, 0.38);
+
+  --blue-cobalt: #2563eb;         /* Royal Cobalt */
+  --blue-indigo: #3b82f6;         /* Vivid Azure Indigo */
+  --blue-cyan: #06b6d4;           /* Breeze Cyan */
+  --blue-navy: #1d4ed8;           /* Deep Blue */
+
+  --fruit-fresh: #0ea5e9;          /* Sky Blue Freshness */
+  --fruit-fresh-vibrant: #38bdf8;
+  --fruit-fresh-dark: #0284c7;
+  --fruit-fresh-light: #e0f2fe;
+  --fruit-fresh-glow: rgba(14, 165, 233, 0.38);
+
+  --accent-citrus: #38bdf8;        /* Bright Sky */
+  --accent-citrus-glow: rgba(56, 189, 248, 0.35);
+
+  --fruit-rotten: #ef4444;         /* Alert Spoilage Crimson */
+  --fruit-rotten-dark: #b91c1c;
+  --fruit-rotten-light: #fee2e2;
+  --fruit-rotten-glow: rgba(239, 68, 68, 0.35);
+  --accent-crimson: var(--fruit-rotten);
+
+  /* Primary Theme Aliases for consistent component rendering */
+  --primary-emerald: var(--sky-main);
+  --primary-emerald-dark: var(--sky-deep);
+  --primary-emerald-light: var(--sky-ice);
+  --primary-emerald-glow: var(--sky-glow);
+
+  --accent-blue: var(--sky-main);
+  --accent-purple: var(--blue-cobalt);
+  --accent-amber: #0284c7;
+
+  /* Sizing and Transitions */
+  --sidebar-width: 270px;
+  --sidebar-collapsed-width: 84px;
+  --navbar-height: 72px;
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-full: 9999px;
+  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 
+  ======================================================
+  LIGHT THEME: Crystalline Sky & Azure Air
+  Soft cloud ice canvas, vibrant sky blue & ocean azure
+  ======================================================
+*/
+:root[data-theme='light'] {
+  --bg-app: #f0f7ff;
+  --bg-gradient: radial-gradient(circle at 10% 10%, rgba(14, 165, 233, 0.12) 0%, transparent 45%),
+                 radial-gradient(circle at 90% 90%, rgba(59, 130, 246, 0.09) 0%, transparent 45%),
+                 radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.06) 0%, transparent 55%),
+                 #f0f7ff;
+  
+  --surface-card: #ffffff;
+  --surface-subtle: #e8f4fd;
+  --surface-hover: #dbeefe;
+  
+  --text-main: #0c2340;       /* Rich deep midnight navy */
+  --text-muted: #3a5372;      /* Slate ocean blue-grey */
+  --text-subtle: #6c84a3;
+  
+  --border-light: #cde4fc;
+  --border-focus: var(--sky-main);
+
+  --glass-bg: rgba(255, 255, 255, 0.88);
+  --glass-border: rgba(186, 230, 253, 0.75);
+  --glass-shadow: 0 10px 30px -5px rgba(12, 35, 64, 0.07), 0 4px 10px -2px rgba(12, 35, 64, 0.03);
+
+  --card-shadow: 0 4px 20px -2px rgba(12, 35, 64, 0.06), 0 2px 6px -1px rgba(12, 35, 64, 0.02);
+  --card-shadow-hover: 0 14px 34px -4px rgba(14, 165, 233, 0.2), 0 4px 12px -2px rgba(12, 35, 64, 0.08);
+
+  --header-bg: rgba(255, 255, 255, 0.9);
+}
+
+/* 
+  ======================================================
+  DARK THEME: Deep Celestial Midnight Sky
+  Midnight sapphire black, electric sky blue & azure glow
+  ======================================================
+*/
+:root[data-theme='dark'] {
+  --bg-app: #040914;
+  --bg-gradient: radial-gradient(circle at 12% 12%, rgba(14, 165, 233, 0.18) 0%, transparent 45%),
+                 radial-gradient(circle at 88% 88%, rgba(37, 99, 235, 0.15) 0%, transparent 45%),
+                 radial-gradient(circle at 50% 20%, rgba(6, 182, 212, 0.1) 0%, transparent 55%),
+                 #040914;
+  
+  --surface-card: #081326;     /* Deep midnight sapphire */
+  --surface-subtle: #0e1e38;   /* Navy slate */
+  --surface-hover: #152b4e;    /* Glowing azure slate */
+  
+  --text-main: #f0f7ff;       /* Crisp crystalline sky white */
+  --text-muted: #8bb1db;      /* Mist azure */
+  --text-subtle: #5778a0;
+  
+  --border-light: rgba(56, 189, 248, 0.18);
+  --border-focus: var(--sky-bright);
+
+  --glass-bg: rgba(8, 19, 38, 0.85);
+  --glass-border: rgba(56, 189, 248, 0.22);
+  --glass-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.65);
+
+  --card-shadow: 0 6px 20px -2px rgba(0, 0, 0, 0.65), 0 2px 8px -1px rgba(0, 0, 0, 0.45);
+  --card-shadow-hover: 0 16px 36px -4px rgba(14, 165, 233, 0.3), 0 4px 12px -2px rgba(0, 0, 0, 0.5);
+
+  --header-bg: rgba(8, 19, 38, 0.9);
+}
+
+/* Base Reset & Core Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--text-muted);
+}
+
+a {
+  color: var(--sky-main);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+}
+
+a:hover {
+  color: var(--sky-bright);
+}
+
+code, pre {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Glass Panels & Modern Cards */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal);
+}
+
+.card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--card-shadow);
+  transition: all var(--transition-normal);
+}
+
+.card:hover {
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* Button Component System */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  border: none;
+  outline: none;
+  text-decoration: none;
+  user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Electric Sky Blue Primary Button */
+.btn-primary {
+  background: linear-gradient(135deg, var(--sky-main) 0%, var(--sky-deep) 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 16px var(--sky-glow);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--sky-bright) 0%, var(--sky-main) 100%);
+  box-shadow: 0 6px 24px var(--sky-glow);
+  transform: translateY(-2px);
+}
+
+/* Deep Azure Secondary Button */
+.btn-secondary {
+  background: var(--surface-card);
+  color: var(--text-main);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--card-shadow);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--surface-subtle);
+  border-color: var(--sky-main);
+  color: var(--sky-main);
+  transform: translateY(-2px);
+}
+
+/* Layout Framework */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: var(--sidebar-width);
+  transition: margin-left var(--transition-normal);
+  min-width: 0;
+}
+
+.main-wrapper.collapsed {
+  margin-left: var(--sidebar-collapsed-width);
+}
+
+.main-content {
+  flex: 1;
+  padding: 32px 40px 60px 40px;
+  margin-top: var(--navbar-height);
+  max-width: 1400px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sky-main);
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn 0.35s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .main-wrapper {
+    margin-left: 0 !important;
+  }
+  .main-content {
+    margin-top: var(--navbar-height);
+    padding: 20px 16px 40px 16px;
+  }
+}
